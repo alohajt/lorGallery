@@ -5,11 +5,8 @@ class ApplicationController < ActionController::API
             token = authorization_header.split(" ")[1]
             secret = Rails.application.secret.secret_key_base
             decoded_token = JWT.decode(token, secret)
-            
-            @users = User.all
-            render json: @users
         rescue
-            render json: "invalid"
+            render json: { message: "won't work"}
         end
     end
 end

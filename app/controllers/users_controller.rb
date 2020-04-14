@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+    before_action :authenticate, only: [:index, :show]
+
     def index
         # fetch(url, {
         #     method:"GET", 
@@ -7,8 +10,22 @@ class UsersController < ApplicationController
         #         "Authorization": `Bearer ${JWT}`
         #     }
         # })
-        authenticate
+        # begin
+        #     authenticate
+        #     @users = User.all
+        #     render json: @users
+        # rescue
+        #     rescue_catch
+        # end
+        @users = User.all
+        render json:@users
     end
+
+    def show
+        @user = User.find(params[:id])
+        render json: @user
+    end
+
 
     def create
         @user = User.create(user_params)
