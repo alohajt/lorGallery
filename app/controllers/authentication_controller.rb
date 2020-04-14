@@ -8,12 +8,12 @@ class AuthenticationController < ApplicationController
             secret = Rails.application.secret.secret_key_base
             token = JWT.encode(payload, secret)
 
-            render json: "password match"
+            render json: {token: token}
            else
-            render json: "no such user"
+            render json: "no such user", status: :unauthorized
            end
         else
-            render json: "no such user"
+            render json: "no such user", status: :unauthorized 
         end
     end
 end

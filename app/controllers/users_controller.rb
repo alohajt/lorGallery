@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
     def index
-        @users = User.all
-        render json: @users
+        # fetch(url, {
+        #     method:"GET", 
+        #     headers: {
+        #         "Content-Type": "application/json",
+        #         "Authorization": `Bearer ${JWT}`
+        #     }
+        # })
+        authenticate
     end
 
     def create
