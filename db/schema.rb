@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_214107) do
     t.string "cost"
     t.string "description"
     t.string "cardCode"
-    t.string "type"
+    t.string "cardType"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

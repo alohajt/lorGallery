@@ -9,7 +9,7 @@ class CreateImages < ActiveRecord::Migration[6.0]
       t.string :cost
       t.string :description
       t.string :cardCode
-      t.string :type
+      t.string :cardType
 
       t.timestamps
     end
