@@ -3,4 +3,6 @@ class User < ApplicationRecord
     # need bcrypt
 
     # validation :username to be unique
+    has_many :bookmarks
+    
 end

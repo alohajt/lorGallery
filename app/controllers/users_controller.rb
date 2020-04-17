@@ -34,6 +34,11 @@ class UsersController < ApplicationController
             render json: @user
     end
 
+    def bookmarkImages
+        user = User.find_by(username: params[:username])
+        render json: user.bookmarks
+    end
+
     private
 
     def user_params
