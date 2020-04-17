@@ -1,7 +1,7 @@
-
 require "json"
 
 Image.destroy_all
+User.destroy_all
 
 data = JSON.parse(File.read('/Users/jtlu/Projects/newMod3/lorGallery/db/set1-en_us.json'))
 data.each do |instance|
@@ -27,4 +27,5 @@ data.each do |instance|
         )
 end
 
+user1 = User.create(username:"JT", password_digest: "123")
 
