@@ -9,4 +9,8 @@ class ImagesController < ApplicationController
         @image = Image.find(params[:id])
         render json: @image
     end
+
+    def create
+    
+    end
 end
